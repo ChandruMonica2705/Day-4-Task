@@ -63,12 +63,12 @@ var title=function (str) {
  console.log(titleCase("diyakshara is my daughter"))
 
  // =>Q3.Sum of all numbers in an array
- // Anonymous  :  
+ // Anonymous  : 
+ var sum = []; 
  var add=function(array){
-    var sum = 0;
     for(var i = 0 ; i< array.length ; i++){
        sum = sum + array[i];
      }
      return sum;
   }
-
+console.log(add[1,2,3,4])
