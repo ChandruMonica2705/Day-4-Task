@@ -161,6 +161,51 @@ return res2;
  }
 console.log(arrow(["data","madam","dad"]));
 
+//Q6.Return median of two sorted arrays of the same size.
+//Anonymous 
+//const arr1=[1,3,5,7];
+//const arr2=[2,4,6,8];
+var b=function median(arr1,arr2){
+  let arr=[...arr1,...arr2];
+  arr.sort((a,b)=>a-b)
+  let n=arr.length;
+  if(n%2===0)
+  {
+return((arr[n/2]+arr[n/2-1])/2)
+  }
+  else{
+return(arr[Math.floor(n/2)])
+  }
+}
+console.log(b([1,3,5,7],[2,4,6,8]));
+//IIFE 
+(function median(arr1,arr2){
+  let arr=[...arr1,...arr2];
+  arr.sort((a,b)=>a-b)
+  let n=arr.length;
+  if(n%2===0)
+  {
+console.log((arr[n/2]+arr[n/2-1])/2);
+  }
+  else{
+console.log(arr[Math.floor(n/2)]);
+  }
+})([1,3,5,7],[2,4,6,8])
+// //Arrow :
+// var b=(arr1,arr2)=>{
+//   let arr=[...arr1,...arr2];
+//   arr.sort((a,b)=>a-b)
+//   let n=arr.length;
+//   if(n%2===0)
+//   {
+// return((arr[n/2]+arr[n/2-1])/2)
+//   }
+//   else{
+// return(arr[Math.floor(n/2)])
+//   }return arr;
+// } 
+// b(([1,3,5,7],[2,4,6,8]))
+// console.log(arr);
 
 
 //   //=>Q7.Remove duplicates from an Array
@@ -188,16 +233,16 @@ console.log(arrow(["data","madam","dad"]));
 //            }
 //        }
 // //Anonymous
-//         function(array , k){
-//                                  k = k % a.length;
-//                                    if(k < 0){
-//                                      k += a.length;
-//                                    }
-       
-//                                    reverse(a, 0, a.length - k - 1);
-//                                    reverse(a, a.length - k, a.length - 1);
-//                                    reverse(a, 0, a.length - 1);
-//                                  }
+(function(arr5,k){
+for (var i=0;i<k;i++){
+  arr5.push(arr5[i])
+}
+for(var i=0;i<k;i++){
+  arr5.shift()
+}
+console.log(arr5)
+})([1,2,3,4,5],3)
+// }
                                  
 // //IIFE :   
 // (function(array , k){
