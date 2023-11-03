@@ -90,37 +90,12 @@ var sum=(arr)=>{
   console.log(sum([1,2,3,4,5]));
 
 // //=>Q4.Return all the prime numbers in an array
-//     //Anonymous 
-//     function(numArray){
-//                       numArray = numArray.filter((number) => {
-//                         for (var i = 2; i <= Math.sqrt(number); i++) {
-//                           if (number % i === 0) return false;
-//                         }
-//                         return true;
-//                       });
-//                       console.log(numArray);
-//                   }
+// //Anonymous 
+//    
 //    //IIFE 
-//                    (  
-//                    function(numArray){
-//                       numArray = numArray.filter((number) => {
-//                         for (var i = 2; i <= Math.sqrt(number); i++) {
-//                           if (number % i === 0) return false;
-//                         }
-//                         return true;
-//                       });
-//                       console.log(numArray);
-//                   })([1,2,3,4])
+//                    
 //     //Arrow 
-//                 primeNumber = (numArray) => {
-//                       numArray = numArray.filter((number) => {
-//                         for (var i = 2; i <= Math.sqrt(number); i++) {
-//                           if (number % i === 0) return false;
-//                         }
-//                         return true;
-//                       });
-//                       console.log(numArray);
-                  // }
+//                
 //=>Q5.Return all the palindromes in an array
 //Anonymous 
 var Palindrome=function(arr)
@@ -163,8 +138,6 @@ console.log(arrow(["data","madam","dad"]));
 
 //Q6.Return median of two sorted arrays of the same size.
 //Anonymous 
-//const arr1=[1,3,5,7];
-//const arr2=[2,4,6,8];
 var b=function median(arr1,arr2){
   let arr=[...arr1,...arr2];
   arr.sort((a,b)=>a-b)
@@ -179,7 +152,7 @@ return(arr[Math.floor(n/2)])
 }
 console.log(b([1,3,5,7],[2,4,6,8]));
 //IIFE 
-(function median(arr1,arr2){
+(function(arr1,arr2){
   let arr=[...arr1,...arr2];
   arr.sort((a,b)=>a-b)
   let n=arr.length;
@@ -191,68 +164,30 @@ console.log((arr[n/2]+arr[n/2-1])/2);
 console.log(arr[Math.floor(n/2)]);
   }
 })([1,3,5,7],[2,4,6,8])
-// //Arrow :
-// var b=(arr1,arr2)=>{
-//   let arr=[...arr1,...arr2];
-//   arr.sort((a,b)=>a-b)
-//   let n=arr.length;
-//   if(n%2===0)
-//   {
-// return((arr[n/2]+arr[n/2-1])/2)
-//   }
-//   else{
-// return(arr[Math.floor(n/2)])
-//   }return arr;
-// } 
-// b(([1,3,5,7],[2,4,6,8]))
-// console.log(arr);
+
+////=>Q7.Remove duplicates from an Array
 
 
-//   //=>Q7.Remove duplicates from an Array
-
-//     //Anonymous 
-//     function(array){
-//                             let dup = [...new Set(array)];
-//                             console.log(dup);
-//                           }
-//     //IIFE            
-//     (function(array){
-//       let dup = [...new Set(array)];
-//       console.log(dup);
-//        })([1,1,2,3,4])
                            
 // //=>Q8.Rotate an array by K times
-// function reverse(array , li , ri){
-//         while(li < ri){
-//              int temp = a[li];
-//              a[li]= a[ri];
-//              a[ri] = temp;
-             
-//              li++;
-//              ri--;
-//            }
-//        }
 // //Anonymous
-(function(arr5,k){
-for (var i=0;i<k;i++){
-  arr5.push(arr5[i])
+var r=function (arr,k){
+for (let i=0;i<k;i++){
+  arr.push(arr[i]);
 }
-for(var i=0;i<k;i++){
-  arr5.shift()
+for(let i=0;i<k;i++){
+  arr.shift();
 }
-console.log(arr5)
-})([1,2,3,4,5],3)
-// }
-                                 
+return arr;
+}
+console.log(r([1,2,3,4,5],3));
 // //IIFE :   
-// (function(array , k){
-//                                  k = k % a.length;
-//                                    if(k < 0){
-//                                      k += a.length;
-//                                    }
-       
-//                                    reverse(a, 0, a.length - k - 1);
-//                                    reverse(a, a.length - k, a.length - 1);
-//                                    reverse(a, 0, a.length - 1);
-//                                  })([1,2,3,4] , 2)
-             
+(function (arr,k){
+  for (let i=0;i<k;i++){
+    arr.push(arr[i]);
+  }
+  for(let i=0;i<k;i++){
+    arr.shift();
+  }
+  console.log(arr);
+  })([1,2,3,4,5],4)
