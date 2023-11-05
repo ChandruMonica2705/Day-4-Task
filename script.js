@@ -91,6 +91,22 @@ var sum=(arr)=>{
 
 // //=>Q4.Return all the prime numbers in an array
 // //Anonymous 
+var prime = [];
+var p=function (item) {
+    var identifier = item / 2;
+      for (var j = 2; j <= identifier; j++) {
+       if ((item % j) == 0) { 
+        return false;
+       } 
+     }
+     return true;
+}
+for (var i = 0; i < a.length; i++) {
+  if (p(a[i])) {
+      prime.push(a[i]);
+  }
+}
+console.log(p([5, 9, 63, 29, 35, 6, 55, 23]));
 //    
 //    //IIFE 
 //                    
@@ -166,8 +182,18 @@ console.log(arr[Math.floor(n/2)]);
 })([1,3,5,7],[2,4,6,8])
 
 ////=>Q7.Remove duplicates from an Array
-
-
+// //Anonymous
+var r1=function removeDuplicates(arr) { 
+  return [...new Set(arr)]; 
+} 
+console.log(r1(["apple", "mango", "apple", 
+"orange", "mango", "mango"]));
+// //IIFE :
+(function(arr1) { 
+arr1= [...new Set(arr1)]; 
+console.log(arr1);
+})(["apple", "mango", "apple", 
+"orange", "mango", "mango"])
                            
 // //=>Q8.Rotate an array by K times
 // //Anonymous
