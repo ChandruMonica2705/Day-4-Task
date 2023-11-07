@@ -91,27 +91,73 @@ var sum=(arr)=>{
 
 // //=>Q4.Return all the prime numbers in an array
 // //Anonymous 
-var prime = [];
-var p=function (item) {
-    var identifier = item / 2;
-      for (var j = 2; j <= identifier; j++) {
-       if ((item % j) == 0) { 
-        return false;
-       } 
-     }
-     return true;
-}
-for (var i = 0; i < a.length; i++) {
-  if (p(a[i])) {
-      prime.push(a[i]);
+function isPrime(num) {
+  if (num <= 1) {
+    return false;
   }
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
 }
-console.log(p([5, 9, 63, 29, 35, 6, 55, 23]));
+function printPrimeNumbers(arr) {
+  const primeArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (isPrime(arr[i])) {
+      primeArray.push(arr[i]);
+    }
+  }
+  return primeArray;
+}
+console.log(printPrimeNumbers([2, 3, 4, 5, 6, 7, 8, 9, 10]));
 //    
 //    //IIFE 
-//                    
+function checkPrime(num) {
+  if (num <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+(function(arr) {
+  const primeArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (checkPrime(arr[i])) {
+      primeArray.push(arr[i]);
+    }
+  }
+  console.log(primeArray); 
+}) ([2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13])
 //     //Arrow 
-//                
+function checkPrime(num) {
+  if (num <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+var p=(arr)=>{
+  const primeArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (checkPrime(arr[i])) {
+      primeArray.push(arr[i]);
+    }
+  }
+  return primeArray ; 
+} 
+console.log(p([1,2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14,15,16,17]));
+
+
 //=>Q5.Return all the palindromes in an array
 //Anonymous 
 var Palindrome=function(arr)
